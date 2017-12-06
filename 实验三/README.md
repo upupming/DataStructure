@@ -12,8 +12,8 @@
     + bool visited: 点u是否已访问过
     + vectot<int> adjacencies: 与u邻接的所有点v(即存在边(u, v))
     + int indegree, outdegree: 点u的入度和出度
-2. Graph(模板) 
-    没有考虑带权图，所有边的权值都当做1处理。
+2. Graph(模板)   
+    没有考虑带权图，所有边的权值都当做1处理。  
     虽然是以有向图写出来的，对无向图，只要输入的邻接矩阵是对称阵，仍然适用。  
 
     成员变量有:
