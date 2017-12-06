@@ -13,7 +13,6 @@
 
 using namespace std;
 
-template <typename Printable>
 struct AdjList{
 	int subscript;
 	bool visited;
@@ -25,13 +24,13 @@ struct AdjList{
 	// 1. Destructor
 	~AdjList(){}
 	// 2. Copy constructor
-	AdjList(const AdjList<Printable> & rhs){
+	AdjList(const AdjList & rhs){
         subscript = rhs.subscript;
         adjacencies = rhs.adjacencies;
         indegree = rhs.indegree;    outdegree = rhs.outdegree;
 	}
 	// 3. Move constructor
-	AdjList(AdjList<Printable> && rhs){
+	AdjList(AdjList && rhs){
         subscript = std::move(rhs.subscript);
         adjacencies = std::move(rhs.adjacencies);
 
@@ -39,13 +38,13 @@ struct AdjList{
         indegree = std::move(rhs.indegree);    outdegree = std::move(rhs.outdegree);
 	}
 	// 4. Copy assignment
-	AdjList & operator= (const AdjList<Printable> & rhs){
+	AdjList & operator= (const AdjList & rhs){
         AdjList copy = rhs;// copy constructor
         std::swap(*this, copy);// assume that swapping is implemented either with three moves or by swapping member by member, not by three copy assignments which will cause infinite loop
         return *this;
 	}
 	// 5. Move assignment
-	AdjList & operator=(AdjList<Printable> && rhs){
+	AdjList & operator=(AdjList && rhs){
         subscript = std::move(rhs.subscript);
         adjacencies = std::move(rhs.adjacencies);
 
@@ -69,9 +68,9 @@ template<typename Printable>
 class Graph{
 private:
     vector<Printable> vertices; // store vertices
-    vector<AdjList<Printable>> adjLists; // adjacency lists
+    vector<AdjList> adjLists; // adjacency lists
 
-    void DFS(AdjList<Printable> & adj_list){
+    void DFS(AdjList & adj_list){
         // visit v and is adjacencies if it hasn't been visit
         if(!adj_list.visited){
             adj_list.visited = true;
@@ -93,7 +92,7 @@ public:
         int n = vertices.size();
         assert((int)adjMatrix.size() == n); // row equals elements size?
         for(int i=0; i<n; i++){
-            adjLists.push_back(AdjList<Printable>(i));
+            adjLists.push_back(AdjList(i));
         }
 
         for(int i=0; i<n; i++){
@@ -115,7 +114,7 @@ public:
         cout << "Number of vertices: " ;
         cin >> numOfVertices;
         vertices = vector<Printable>(numOfVertices); // Initialize vertices
-        adjLists = vector<AdjList<Printable>>(numOfVertices); // Initialize lists
+        adjLists = vector<AdjList>(numOfVertices); // Initialize lists
         for(int i=0; i<numOfVertices; i++){
             cout << "The " << i+1 << "th AdjList is : ";
             cin >> vertices[i].subscript; // initialize vertice
