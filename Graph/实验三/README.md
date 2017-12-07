@@ -49,7 +49,7 @@
             - f. 对u的每个邻接点，若未访问，则将其入队
 
 输入样例:  
-![无向图](https://github.com/upupming/DataStructure/blob/master/%E5%AE%9E%E9%AA%8C%E4%B8%89/Graph.png)
+![无向图](./Graph.png)
 
 运行结果:
 
@@ -97,7 +97,7 @@ Dijkstra算法的思想是贪心算法，每次出队的顶点所求得的距离
 
 输入样例:
 
-![设备更新](https://github.com/upupming/DataStructure/blob/master/%E5%AE%9E%E9%AA%8C%E4%B8%89/%E8%AE%BE%E5%A4%87%E6%9B%B4%E6%96%B0%E9%97%AE%E9%A2%98/input.png)
+![设备更新](./%E8%AE%BE%E5%A4%87%E6%9B%B4%E6%96%B0%E9%97%AE%E9%A2%98/input.png)
 
 运行结果:
 
