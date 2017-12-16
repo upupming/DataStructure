@@ -6,7 +6,7 @@
 
 样例:
 
-[BST](./BST.png)
+![BST](./BST.png)
 
 结点定义为模板类Node:
 
