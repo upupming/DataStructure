@@ -4,6 +4,10 @@
 
 ## 1. 二叉搜索树的查找、插入、建立、删除
 
+样例:
+
+[BST](./BST.png)
+
 结点定义为模板类Node:
 
 |数据域|意义|
@@ -14,11 +18,11 @@
 
 构造函数:
 
-Node(Comparable value, Node *lchild = nullptr, Node *rchild = nullptr);
+`Node(Comparable value, Node *lchild = nullptr, Node *rchild = nullptr);`
 
 <重载函数:
 
-bool operator < (const Comparable & t);
+`bool operator < (const Comparable & t);`
 
 
 模板类BST:
@@ -30,4 +34,6 @@ bool operator < (const Comparable & t);
 
 查找函数:
 
-递归
+1. 若当前节点(node)关键字等于待查找关键字(key)，返回当前节点。
+2. 若当前节点(node)关键字小于待查找关键字(key)，递归查找node的右子树。
+3. 若当前节点(node)关键字等于待查找关键字(key)，递归查找node的左。
