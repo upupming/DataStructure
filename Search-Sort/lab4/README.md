@@ -10,6 +10,8 @@
 
 ### 结点定义为模板类Node:
 
+重复节点计数。
+
 |数据域|意义|
 |-|-|
 |key|关键字大小|
@@ -65,11 +67,11 @@
 + 3.2 若node无右子树，删除当前结点，用左子树接替。
 + 3.3 若node有左右子树，删除右子树中的最小元素，放入node中(覆盖原有key值)。
 
-
-    Constructing BST using int:{10, 14, 3, 1, 5, 12, 2, 7, 16, 15, 18}...
-    Deleting 10 from BST...
-    Deleting min sequentially...
-    1 2 3 5 7 12 14 15 16 18 
+>
+>    Constructing BST using int:{10, 14, 3, 1, 5, 12, 2, 7, 16, 15, 18}...
+>    Deleting 10 from BST...
+>    Deleting min sequentially...
+>    1 2 3 5 7 12 14 15 16 18 
 
 ## 2. 快排的优化
 
