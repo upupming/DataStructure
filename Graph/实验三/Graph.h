@@ -6,6 +6,7 @@
 #ifndef GRAPH_H_INCLUDED
 #define GRAPH_H_INCLUDED
 
+#include <iostream>
 #include <vector>
 #include <stack>
 #include <queue>

@@ -1,0 +1,17 @@
+Building graph...
+The adjList of your Graph is : 
+v0 : v1 v2 
+v1 : v0 v3 
+v2 : v0 v5 
+v3 : v1 
+v4 : v5 
+v5 : v2 v4 v6 
+v6 : v5 
+
+DFS result is : 
+v0 v1 v3 v2 v5 v4 v6 
+DFS non-recursively, result is : 
+v0 v1 v3 v2 v5 v4 v6 
+
+BFS result is : 
+v0 v1 v2 v3 v5 v4 v6 
