@@ -34,6 +34,17 @@ private:
         }
         return ii;
     }
+    void sortWithOutTail(int i, int j){
+        if(i>=j) return;
+        int pivot = find(i, j);
+        if(pivot != -1){
+            //cout << (*this) << endl;
+            int k = parti(i, j, pivot);
+
+            sortWithOutTail(i, k-1);// left
+            sortWithOutTail(k, j);// right
+        }
+    }
     void sort(int i, int j){
         if(i>=j) return;
         while(i<j){
@@ -62,6 +73,9 @@ public:
         sort(0, arr.size()-1);
     }
 
+    void sortWithOutTail(){
+        sortWithOutTail(0, arr.size()-1);
+    }
 };
 
 template<typename Comparable>
@@ -75,8 +89,8 @@ ostream& operator<< (ostream& os, const QuickSort<Comparable>& qs){
 
 int main()
 {
-    vector<int> arr;
     int N = 50000;
+    vector<int> arr(N);
     srand(time(nullptr));
 
     ofstream out("output.txt");
@@ -86,7 +100,25 @@ int main()
     for(int t=0; t<T; t++){
         cout << "testing " << t+1 << "..." << endl;
         for(int j=0; j<N; j++)
-            arr.push_back(rand());
+            arr[j] = rand();
+
+        QuickSort<int> qs(arr);
+        clock_t start = clock();
+        qs.sortWithOutTail();
+        clock_t finish = clock();
+        total += finish-start;
+        out << qs;
+    }
+    cout  << endl << T << " test cases, for each test " << N <<  "integers" << endl;
+    cout << "on everage " << (total)/(CLOCKS_PER_SEC/1e6)/T << " us = " << (total)/(CLOCKS_PER_SEC/1e3)/T << " ms per case" << endl;
+
+    cout << endl << endl;
+
+    total = 0;
+    for(int t=0; t<T; t++){
+        cout << "testing " << t+1 << "..." << endl;
+        for(int j=0; j<N; j++)
+            arr[j] = rand();
 
         QuickSort<int> qs(arr);
         clock_t start = clock();
@@ -95,10 +127,8 @@ int main()
         total += finish-start;
         out << qs;
     }
-
     cout  << endl << T << " test cases, for each test " << N <<  "integers" << endl;
-    cout << "on everage " << (total)/(CLOCKS_PER_SEC/1e6)/T << " us = " << (total)/(CLOCKS_PER_SEC/1e3)/T << " ms per case" << endl;
-
+    cout << "After optimizing, on everage " << (total)/(CLOCKS_PER_SEC/1e6)/T << " us = " << (total)/(CLOCKS_PER_SEC/1e3)/T << " ms per case" << endl;
     out.close();
     return 0;
 }
