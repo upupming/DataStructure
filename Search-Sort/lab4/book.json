@@ -20,7 +20,7 @@
   "pdf": {
     "pageNumbers": true,
     "fontFamily": "SimSun", 
-    "fontSize": 10,
+    "fontSize": 12,
     "paperSize": "a4",
     "margin": {
       "right": 62,

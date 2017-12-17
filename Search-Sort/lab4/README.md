@@ -6,7 +6,7 @@
 
 样例:
 
-|![BST](./BST.png)|
+|<img src="./BST.png" width="250" height="150">|
 |:--:|
 |*图1-BST*|
 
@@ -192,14 +192,14 @@ Deleting min sequentially...
 
 最开始测试了几个较小的数组: 
 
-|![线性排序](./LinearSort.png)|
+|<img src="./LinearSort.png" width="200" height="250">|
 |:--:|
 |图2-线性排序|
 
 
 然后用50000个数据的数组测试，输出重定向到文件:
 
-|![线性排序-五万用例](./LinearSort_5e4.png)|
+|<img src="./LinearSort_5e4.png" width="200" height="250">|
 |:--:|
 |图3-50000用例测试线性排序|
 
