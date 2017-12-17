@@ -7,7 +7,7 @@
 
 using namespace std;
 
-ofstream out("output.txt");
+ofstream out("ls-output.txt");
 
 void countSort(const vector<int> & arr){
     int len = arr.size();

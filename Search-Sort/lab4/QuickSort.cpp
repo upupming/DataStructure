@@ -10,6 +10,8 @@
 
 using namespace std;
 
+ofstream out("qs-output.txt");
+
 template<typename Comparable>
 class QuickSort{
 private:
@@ -93,7 +95,6 @@ int main()
     vector<int> arr(N);
     srand(time(nullptr));
 
-    ofstream out("output.txt");
 
     int T = 10;
     clock_t total = 0;
