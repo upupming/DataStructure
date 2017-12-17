@@ -74,11 +74,15 @@
 运行结果:
 
 <pre>
-    Constructing BST using int:{10, 14, 3, 1, 5, 12, 2, 7, 16, 15, 18}...
-    Deleting 10 from BST...
-    Deleting min sequentially...
-    1 2 3 5 7 12 14 15 16 18 
+Constructing BST using int:
+{10, 14, 3, 1, 10, 5, 12, 10, 7, 5, 15, 18} ...
+Deleting 10 from BST...
+Deleting min sequentially...
+1 3 5 5 7 10 10 12 14 15 18 
+
 </pre>
+
+可见其删除指定元素和最小元素都只会删除一个，因此可以用于排序。
 
 ## 2. 快排的优化
 
