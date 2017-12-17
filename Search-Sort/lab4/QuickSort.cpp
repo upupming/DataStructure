@@ -4,6 +4,9 @@
  */
 #include <iostream>
 #include <vector>
+#include <fstream>
+#include <random>
+#include <time.h>
 
 using namespace std;
 
@@ -38,10 +41,17 @@ private:
             if(pivot != -1){
                 //cout << (*this) << endl;
                 int k = parti(i, j, pivot);
-                sort(i, k-1);// left
-                //sort(k, j);// right
-                i = k;
+
+                if(k-i >= j-k){
+                    sort(i, k-1);// left
+                    i = k;
+                }
+                else{
+                    sort(k, j);// right
+                    j = k-1;
+                }
             }
+            else break;
         }
     }
 public:
@@ -57,7 +67,7 @@ public:
 template<typename Comparable>
 ostream& operator<< (ostream& os, const QuickSort<Comparable>& qs){
     for(auto x: qs.arr){
-        os << x << " ";
+        os << x << endl;
     }
     os << endl;
     return os;
@@ -65,9 +75,30 @@ ostream& operator<< (ostream& os, const QuickSort<Comparable>& qs){
 
 int main()
 {
-    vector<int> arr{-32, 3, 4354, 2, 45, -86, 24, 324, -459, 21, 123};
-    QuickSort<int> qs(arr);
-    qs.sort();
-    cout << qs;
+    vector<int> arr;
+    int N = 50000;
+    srand(time(nullptr));
+
+    ofstream out("output.txt");
+
+    int T = 10;
+    clock_t total = 0;
+    for(int t=0; t<T; t++){
+        cout << "testing " << t+1 << "..." << endl;
+        for(int j=0; j<N; j++)
+            arr.push_back(rand());
+
+        QuickSort<int> qs(arr);
+        clock_t start = clock();
+        qs.sort();
+        clock_t finish = clock();
+        total += finish-start;
+        out << qs;
+    }
+
+    cout  << endl << T << " test cases, for each test " << N <<  "integers" << endl;
+    cout << "on everage " << (total)/(CLOCKS_PER_SEC/1e6)/T << " us = " << (total)/(CLOCKS_PER_SEC/1e3)/T << " ms per case" << endl;
+
+    out.close();
     return 0;
 }

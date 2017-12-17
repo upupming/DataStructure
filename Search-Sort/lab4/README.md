@@ -144,3 +144,6 @@
 
 ![线性排序-五万用例](./LinearSort_5e4.png)
 
+![线性排序-时间分析](./LinearSort_10_5e4.png)
+
+
