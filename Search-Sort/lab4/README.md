@@ -169,9 +169,9 @@
 
 主要用来排序浮点数，可以将整数部分相同的元素放入同一桶中。
 
-![线性排序](./LinearSort.png)
+![线性排序](./LinearSort.png = 100*20)
 
-![线性排序-五万用例](./LinearSort_5e4.png)
+![线性排序-五万用例](./LinearSort_5e4.png = 100*20)
 
     1. Count sort: 
 
