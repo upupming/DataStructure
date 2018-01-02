@@ -96,10 +96,10 @@ typedef int position,cursor;
 
 #### 2.3.1 栈的数组实现
 
-栈的容量:maxlength – 1 ;
-栈空:S.top = 0 ;
-栈满:S.top = maxlength – 1 ;
-栈顶元素:S.elements[ S.top ] ;
+栈的容量:maxlength – 1 ;  
+栈空:S.top = 0 ;  
+栈满:S.top = maxlength – 1 ;  
+栈顶元素:S.elements[ S.top ] ;  
 
 #### 2.3.2 栈的指针实现
 
@@ -111,7 +111,7 @@ typedef int position,cursor;
 
 每个元素有一个指针域，指向下一个元素。
 
-front：队首
+front：队首  
 rear：队尾
 
 #### 2.4.2 队列的数组实现
