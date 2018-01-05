@@ -1,0 +1,24 @@
+/* 在无序记录A[1]-A[n]中找到从小到大排在第j位的记录
+ * 快排划分思想：一次划分将基准元素定位于k，如果k==j，找到第j小的元素，否则，递归地在k的左边或右边进行划分直到k==j
+ */
+
+#include <iostream>
+
+using namespace std;
+
+// 分块，返回分块基准值所处的下标
+int partition(int A[], int i, int j){
+    int pivot = A[i]; // 直接以A[i]作为基准值
+    int l = i+1, r = j;
+    
+    do{
+        swap(A[l], A[r]); // 开始会多执行一次，使A[i+1]、A[j]对调
+        while(A[l].key < pivot) l++; // 直到A[l]较pivot大/相等
+        while(A[r].key >= pivot) r--; // 直到A[r]较pivot小
+    }while(l<r); // 只有l<r时，才重复循环交换A[l]、A[r]
+
+    // 最终pivot必在l处
+
+int main(){
+   return 0;
+} 
